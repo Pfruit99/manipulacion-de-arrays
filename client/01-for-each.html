@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For each</title>
+</head>
+
+<body>
+    <h1>for each</h1>
+
+
+    <div id="app"></div>
+    <script>
+        const tasks = [{
+                title: 'crear clases',
+                done: true
+            },
+            {
+                title: 'salir',
+                done: false
+            }
+        ]
+
+        let nodes = document.createElement('ul');
+        const App = document.getElementById('app');
+
+        tasks.forEach(task => {
+            const element = `
+                <li>
+                    <input type="checkbox" ${task.done ? 'checked' : ''}/>
+                    ${task.title} :  ${task.done} 
+                </li>        
+            `;
+            nodes.innerHTML += element;
+        })
+
+        App.append(nodes);
+
+
+
+        // const products = [{
+        // title: 'burger',
+        // price: 12120
+        // },
+        // {
+        // title: 'pizza',
+        // price: 12344
+        // },
+        // {
+        // title: 'soda',
+        // price: 5250
+        // }
+
+        // ];
+        // const App = document.getElementById('app');
+        // products.forEach(product => {
+        // App.innerHTML += `<li>${product.title} - ${product.price}</li>`
+        // })
+    </script>
+</body>
+
+</html>
